@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microgreens – Tiny greens, big nutrition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito+Sans:wght@400;600&family=Noto+Sans+Tamil:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1f3d2b;--leaf:#4f8f3a;--sprout:#b9d96c;--soil:#3b2a20;--mist:#f1f6ec;--ink:#1d2a21}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Nunito Sans','Noto Sans Tamil',sans-serif;color:var(--ink);background:var(--mist);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Fraunces','Noto Sans Tamil',serif;line-height:1.2;color:var(--forest)}
+:lang(ta) body,:lang(ta){line-height:1.8}
+header{position:sticky;top:0;z-index:5;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 5vw}
+.logo{font-family:'Fraunces',serif;font-weight:800;font-size:1.25rem;color:var(--sprout);text-decoration:none}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:#e6f0dc;text-decoration:none;font-size:.95rem}
+nav a:hover,nav a:focus-visible{color:var(--sprout);outline:none;text-decoration:underline}
+.tog{display:flex;border:2px solid var(--sprout);border-radius:99px;overflow:hidden}
+.tog button{background:none;border:0;color:var(--sprout);padding:5px 14px;font:600 .9rem 'Nunito Sans','Noto Sans Tamil',sans-serif;cursor:pointer}
+.tog button[aria-pressed=true]{background:var(--sprout);color:var(--forest)}
+.tog button:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.hero{background:linear-gradient(var(--forest) 0,#2c5a3b 100%);color:#fff;padding:72px 5vw 0;text-align:center;overflow:hidden}
+.hero h1{color:#fff;font-size:clamp(2.2rem,6vw,4rem);font-weight:800}
+.hero p{max-width:34em;margin:16px auto 26px;color:#dcebd0}
+.btn{display:inline-block;background:var(--sprout);color:var(--forest);font-weight:600;padding:12px 26px;border-radius:99px;text-decoration:none}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.field{display:block;width:min(560px,100%);height:150px;margin:20px auto 0}
+.field .s{transform-origin:bottom;transform-box:fill-box;animation:grow 1.4s cubic-bezier(.2,.8,.3,1) backwards}
+@keyframes grow{from{transform:scaleY(0)}}
+.soil{background:var(--soil);height:26px}
+section{padding:64px 5vw;max-width:1100px;margin:auto}
+section>h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:8px}
+.lead{max-width:36em;margin-bottom:30px;color:#41564a}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px 34px}
+.why h3{font-size:1.15rem;margin-bottom:4px;border-top:3px solid var(--leaf);padding-top:10px}
+.greens{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.card{background:#fff;border-radius:6px 26px 6px 26px;padding:24px;border-left:8px solid var(--c);box-shadow:0 2px 0 #d6e4cb}
+.card h3{font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--c);flex:none}
+.tag{color:var(--c);font-weight:600;margin-bottom:10px;filter:brightness(.8)}
+.card ul{padding-left:20px;margin:10px 0 14px}
+.card li{margin-bottom:6px}
+.days{display:inline-block;background:var(--mist);border-radius:99px;padding:3px 14px;font-size:.88rem;font-weight:600;color:var(--forest)}
+.alt{background:#e1ecd5}
+.note{font-size:.9rem;color:#4a5f50;border-top:1px dashed #b7cca6;padding-top:10px}
+.amt{display:flex;flex-wrap:wrap;align-items:center;gap:14px 36px;background:var(--forest);color:#fff;border-radius:6px 40px 6px 40px;padding:28px 34px;margin-bottom:34px}
+.amt b{font-family:'Fraunces',serif;font-size:clamp(2.6rem,8vw,4rem);color:var(--sprout);line-height:1}
+.amt p{max-width:28em;color:#dcebd0}
+.band{background:var(--soil);color:#f3e9dd}
+.band section{text-align:center}
+.band h2{color:var(--sprout)}
+.band p{max-width:34em;margin:0 auto}
+footer{background:var(--forest);color:#cfe0c3;text-align:center;padding:30px 5vw;font-size:.92rem}
+@media(max-width:620px){nav a{display:none}header{padding:10px 4vw}}
+@media(prefers-reduced-motion:reduce){.field .s{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">Microgreens</a>
+  <nav>
+    <a href="#why" data-en="Why?" data-ta="ஏன்?">Why?</a>
+    <a href="#greens" data-en="The greens" data-ta="கீரைகள்">The greens</a>
+    <a href="#health" data-en="Health" data-ta="ஆரோக்கியம்">Health</a>
+    <a href="#eat" data-en="How to eat" data-ta="எப்படி சாப்பிடுவது">How to eat</a>
+    <div class="tog" role="group" aria-label="Language">
+      <button id="bEn" aria-pressed="true">English</button>
+      <button id="bTa" aria-pressed="false">தமிழ்</button>
+    </div>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1 data-en="Tiny greens. Big nutrition." data-ta="சிறிய கீரை, பெரிய சத்து">Tiny greens. Big nutrition.</h1>
+  <p data-en="Microgreens are young plants cut in 7 to 14 days. They are small, but full of vitamins and antioxidants." data-ta="மைக்ரோகிரீன்ஸ் என்பது 7 முதல் 14 நாட்களில் அறுவடை செய்யும் இளம் செடிகள். சிறியவை, ஆனால் வைட்டமின்களும் ஆன்டிஆக்ஸிடன்ட்களும் நிறைந்தவை.">Microgreens are young plants cut in 7 to 14 days. They are small, but full of vitamins and antioxidants.</p>
+  <a class="btn" href="#greens" data-en="Meet the greens" data-ta="கீரைகளைப் பார்க்க">Meet the greens</a>
+  <svg class="field" id="field" viewBox="0 0 500 150" aria-hidden="true"></svg>
+</div>
+<div class="soil"></div>
+
+<section id="why">
+  <h2 data-en="Why microgreens?" data-ta="ஏன் மைக்ரோகிரீன்ஸ்?">Why microgreens?</h2>
+  <p class="lead" data-en="Most people have never heard of them. Here’s why they deserve a place on your plate." data-ta="பலருக்கு இவை தெரியாது. உங்கள் தட்டில் இடம் பெற வேண்டிய காரணங்கள் இதோ.">Most people have never heard of them. Here’s why they deserve a place on your plate.</p>
+  <div class="why">
+    <div><h3 data-en="Packed with nutrients" data-ta="சத்து நிறைந்தவை">Packed with nutrients</h3><p data-en="Gram for gram, they can hold more nutrients than the full-grown plant." data-ta="அதே எடையில், முழு வளர்ச்சி அடைந்த செடியை விட அதிக சத்து இருக்கலாம்.">Gram for gram, they can hold more nutrients than the full-grown plant.</p></div>
+    <div><h3 data-en="Grow at home" data-ta="வீட்டிலேயே வளர்க்கலாம்">Grow at home</h3><p data-en="One tray on your kitchen shelf is enough. No garden needed." data-ta="சமையலறை அலமாரியில் ஒரு தட்டு போதும். தோட்டம் தேவையில்லை.">One tray on your kitchen shelf is enough. No garden needed.</p></div>
+    <div><h3 data-en="Ready in a week" data-ta="ஒரு வாரத்தில் தயார்">Ready in a week</h3><p data-en="Most are ready to cut in 6 to 10 days." data-ta="பெரும்பாலானவை 6 முதல் 10 நாட்களில் அறுவடைக்குத் தயார்.">Most are ready to cut in 6 to 10 days.</p></div>
+    <div><h3 data-en="Easy to eat" data-ta="சாப்பிட எளிது">Easy to eat</h3><p data-en="Add them to salad, sandwiches, dosa or rice." data-ta="சாலட், சாண்ட்விச், தோசை, சாதத்தில் சேர்க்கலாம்.">Add them to salad, sandwiches, dosa or rice.</p></div>
+  </div>
+</section>
+
+<section id="greens">
+  <h2 data-en="Five greens to know" data-ta="தெரிந்து கொள்ள வேண்டிய 5 கீரைகள்">Five greens to know</h2>
+  <p class="lead" data-en="Each one has its own taste and its own strengths." data-ta="ஒவ்வொன்றுக்கும் தனி சுவை, தனி நன்மைகள்.">Each one has its own taste and its own strengths.</p>
+  <div class="greens" id="cards"></div>
+</section>
+
+<div class="alt"><section id="health">
+  <h2 data-en="Good for everyday health" data-ta="தினசரி ஆரோக்கியத்திற்கு">Good for everyday health</h2>
+  <p class="lead" data-en="Microgreens are low in carbs and calories, and rich in fibre and antioxidants. That makes them a smart add-on for diabetes and PCOS meals." data-ta="மைக்ரோகிரீன்ஸில் மாவுச்சத்து, கலோரி குறைவு; நார்ச்சத்து, ஆன்டிஆக்ஸிடன்ட்கள் நிறைய. அதனால் சர்க்கரை நோய், PCOS உணவுகளுடன் சேர்க்க ஏற்றவை.">Microgreens are low in carbs and calories, and rich in fibre and antioxidants. That makes them a smart add-on for diabetes and PCOS meals.</p>
+  <div class="greens" id="health-cards"></div>
+</section></div>
+
+<section id="easy">
+  <h2 data-en="Made for busy days" data-ta="பரபரப்பான நாட்களுக்கு ஏற்றது">Made for busy days</h2>
+  <p class="lead" data-en="Healthy food only works if it is easy. This one is." data-ta="ஆரோக்கிய உணவு எளிதாக இருந்தால்தான் தொடர முடியும். இது எளிது.">Healthy food only works if it is easy. This one is.</p>
+  <div class="why" id="easy-items"></div>
+</section>
+
+<div class="alt"><section id="eat">
+  <h2 data-en="How much should you eat?" data-ta="எவ்வளவு சாப்பிடலாம்?">How much should you eat?</h2>
+  <div class="amt" style="margin-top:22px">
+    <b>25–30 g</b>
+    <p><span data-en="A small handful a day. New to microgreens? Start with 10 to 15 g. Wheatgrass: 30 ml fresh juice." data-ta="ஒரு நாளைக்கு ஒரு சிறிய கைப்பிடி. புதிதாக சாப்பிடுகிறீர்களா? 10 முதல் 15 g-ல் தொடங்குங்கள். கோதுமை புல்: 30 ml புதிய ஜூஸ்.">A small handful a day. New to microgreens? Start with 10 to 15 g. Wheatgrass: 30 ml fresh juice.</span> <small data-en="(A general guide, not a fixed dose.)" data-ta="(பொது வழிகாட்டி மட்டுமே.)">(A general guide, not a fixed dose.)</small></p>
+  </div>
+  <div class="why" id="ways"></div>
+  <p class="note" style="margin-top:26px" data-en="Eat raw or add after cooking. Heat reduces some nutrients." data-ta="பச்சையாக அல்லது சமைத்த பிறகு சேர்க்கவும். சூடு சில சத்துக்களைக் குறைக்கும்.">Eat raw or add after cooking. Heat reduces some nutrients.</p>
+</section></div>
+
+<div class="band"><section id="care">
+  <h2 data-en="Made with care, picked by hand" data-ta="அன்புடன் வளர்த்து, கையால் அறுவடை">Made with care, picked by hand</h2>
+  <p style="margin-top:14px" data-en="Grown the way you would at home: patiently, with daily care. Every tray is cut by hand and packed fresh, with love." data-ta="வீட்டில் வளர்ப்பது போலவே பொறுமையாக, தினமும் கவனித்து வளர்க்கிறோம். ஒவ்வொரு தட்டும் கையால் அறுவடை செய்து, அன்புடன் புதிதாக பேக் செய்யப்படுகிறது.">Grown the way you would at home: patiently, with daily care. Every tray is cut by hand and packed fresh, with love.</p>
+</section></div>
+
+<footer>
+  <p data-en="General information only. Microgreens are food, not medicine. Keep taking your prescribed treatment and talk to your doctor about your diet." data-ta="இது பொது தகவல் மட்டுமே. மைக்ரோகிரீன்ஸ் உணவே, மருந்து அல்ல. மருத்துவர் சொன்ன சிகிச்சையைத் தொடருங்கள்; உணவு பற்றி மருத்துவரிடம் கேளுங்கள்.">General information only, not medical advice. Talk to your doctor about your diet.</p>
+</footer>
+
+<script>
+const P=[
+{c:'#b5446e',n:['Radish','முள்ளங்கி'],t:['Spicy and crunchy','காரம், மொறுமொறுப்பு'],d:6,b:[['Vitamin C helps your immunity','வைட்டமின் C நோய் எதிர்ப்பு சக்தியைக் கூட்டும்'],['Antioxidants protect your cells','ஆன்டிஆக்ஸிடன்ட்கள் செல்களைப் பாதுகாக்கும்'],['Fibre supports digestion','நார்ச்சத்து செரிமானத்திற்கு உதவும்']]},
+{c:'#7a5ca8',n:['Turnip','டர்னிப்'],t:['Mild and peppery','லேசான காரம்'],d:7,b:[['Vitamin K supports strong bones','வைட்டமின் K எலும்புகளை வலுப்படுத்தும்'],['Vitamin C and antioxidants','வைட்டமின் C, ஆன்டிஆக்ஸிடன்ட்கள் உள்ளன'],['Low in calories','கலோரி குறைவு']]},
+{c:'#3f8f4a',n:['Bok choy','பாக் சோய்'],t:['Mild and sweet','லேசான இனிப்பு'],d:8,b:[['Vitamin A is good for your eyes','வைட்டமின் A கண்களுக்கு நல்லது'],['Has calcium for bones','எலும்புகளுக்கான கால்சியம் உள்ளது'],['Vitamin C helps your skin and immunity','வைட்டமின் C சருமத்திற்கும் எதிர்ப்பு சக்திக்கும் உதவும்']]},
+{c:'#8a6a3c',n:['Chia','சியா'],t:['Soft and nutty','மென்மை, நட்ஸ் சுவை'],d:8,b:[['Plant omega-3 is good for your heart','தாவர ஒமேகா-3 இதயத்திற்கு நல்லது'],['Protein and fibre keep you full','புரதமும் நார்ச்சத்தும் பசியைத் தாங்கும்'],['Antioxidants for daily protection','தினசரி பாதுகாப்புக்கு ஆன்டிஆக்ஸிடன்ட்கள்']]},
+{c:'#6f9a1c',n:['Wheatgrass','கோதுமை புல்'],t:['Grassy and sweet, best as juice','புல் சுவை, இனிப்பு; ஜூஸாக சிறந்தது'],d:9,b:[['Rich in chlorophyll and vitamins A, C, E','குளோரோபில், வைட்டமின் A, C, E நிறைந்தது'],['Has iron and minerals','இரும்பு, தாது உப்புகள் உள்ளன'],['Take a small fresh juice shot','சிறிய அளவு புதிய ஜூஸாக அருந்துங்கள்']]}
+];
+const H=[
+{c:'#3f7fb5',n:['For diabetes meals','சர்க்கரை நோய் உணவுக்கு'],b:[['Low in carbs and calories','மாவுச்சத்து, கலோரி குறைவு'],['Fibre helps slow the sugar rise after meals','நார்ச்சத்து உணவுக்குப் பின் சர்க்கரை உயர்வை மெதுவாக்கும்'],['Adds taste and crunch without adding sugar','சர்க்கரை சேர்க்காமல் சுவையும் மொறுமொறுப்பும் தரும்'],['Early studies (mostly in animals) look promising. More human research is needed.','ஆரம்பகட்ட ஆய்வுகள் (பெரும்பாலும் விலங்குகளில்) நம்பிக்கை தருகின்றன. மனிதர்களில் மேலும் ஆய்வு தேவை.']],o:['Not a medicine. Keep taking your treatment.','இது மருந்து அல்ல. மருத்துவர் சொன்ன சிகிச்சையைத் தொடருங்கள்.']},
+{c:'#c05a8a',n:['For PCOS meals','PCOS உணவுக்கு'],b:[['Fibre and low carbs help keep blood sugar steady','நார்ச்சத்து, குறைந்த மாவுச்சத்து சர்க்கரையை சீராக வைக்க உதவும்'],['Antioxidants help fight inflammation','ஆன்டிஆக்ஸிடன்ட்கள் வீக்கத்தை எதிர்க்க உதவும்'],['Low calorie and filling, good for a weight plan','கலோரி குறைவு, வயிறு நிறையும்; எடை மேலாண்மைக்கு நல்லது'],['Vitamins that support skin and hair','சருமம், முடிக்கு உதவும் வைட்டமின்கள்']],o:['Works best with exercise, good sleep and your doctor’s advice.','உடற்பயிற்சி, நல்ல தூக்கம், மருத்துவர் ஆலோசனையுடன் சிறந்த பலன்.']}
+];
+const E=[
+[['Ready to use','உடனே பயன்படுத்தலாம்'],['Rinse and eat. No cooking or chopping needed.','கழுவி சாப்பிடலாம். சமைக்கவோ நறுக்கவோ தேவையில்லை.']],
+[['No picking leaves','இலை ஆய வேண்டாம்'],['Unlike spinach, there are no stems to sort. The whole sprout is edible.','கீரை போல தண்டு பிரிக்க வேண்டாம். முழு செடியும் சாப்பிடலாம்.']],
+[['Saves time','நேரம் மிச்சம்'],['Add to any meal in under a minute.','எந்த உணவிலும் ஒரு நிமிடத்தில் சேர்க்கலாம்.']],
+[['Small amount, big gain','கொஞ்சம் போதும், நிறைய பலன்'],['One small handful adds fibre, vitamins and antioxidants.','ஒரு சிறிய கைப்பிடி நார்ச்சத்து, வைட்டமின், ஆன்டிஆக்ஸிடன்ட் தரும்.']]
+];
+const W=[
+[['In salads','சாலட்டில்'],['Toss them in raw.','பச்சையாகச் சேர்க்கவும்.']],
+[['In smoothies','ஸ்மூத்தியில்'],['Blend them in.','கலந்து அரைக்கவும்.']],
+[['Rolls and sandwiches','ரோல், சாண்ட்விச்'],['Layer inside roti rolls.','ரோட்டி ரோலுக்குள் வைக்கவும்.']],
+[['Dal, rice, sabzi','பருப்பு, சாதம், சப்ஜி'],['Sprinkle on top after cooking.','சமைத்த பிறகு மேலே தூவவும்.']]
+];
+let L='en';
+try{L=localStorage.getItem('mg-lang')==='ta'?'ta':'en'}catch(e){}
+function draw(){
+  const i=L==='ta'?1:0;
+  const tl=a=>a.map(x=>`<div><h3>${x[0][i]}</h3><p>${x[1][i]}</p></div>`).join('');
+  document.getElementById('health-cards').innerHTML=H.map(h=>`<article class="card" style="--c:${h.c}"><h3><span class="dot"></span>${h.n[i]}</h3><ul>${h.b.map(x=>`<li>${x[i]}</li>`).join('')}</ul><p class="note">${h.o[i]}</p></article>`).join('');
+  document.getElementById('easy-items').innerHTML=tl(E);
+  document.getElementById('ways').innerHTML=tl(W);
+  document.getElementById('cards').innerHTML=P.map(p=>`<article class="card" style="--c:${p.c}"><h3><span class="dot"></span>${p.n[i]}</h3><p class="tag">${p.t[i]}</p><ul>${p.b.map(x=>`<li>${x[i]}</li>`).join('')}</ul><span class="days">${i?`சுமார் ${p.d} நாட்களில் தயார்`:`Ready in about ${p.d} days`}</span></article>`).join('');
+}
+function setLang(l){
+  L=l;document.documentElement.lang=l;
+  document.querySelectorAll('[data-en]').forEach(e=>e.textContent=e.dataset[l]);
+  document.getElementById('bEn').setAttribute('aria-pressed',l==='en');
+  document.getElementById('bTa').setAttribute('aria-pressed',l==='ta');
+  document.title=l==='ta'?'மைக்ரோகிரீன்ஸ் – சிறிய கீரை, பெரிய சத்து':'Microgreens – Tiny greens, big nutrition';
+  draw();
+  try{localStorage.setItem('mg-lang',l)}catch(e){}
+}
+document.getElementById('bEn').onclick=()=>setLang('en');
+document.getElementById('bTa').onclick=()=>setLang('ta');
+// sprout row: one sprout per green, each a different height
+document.getElementById('field').innerHTML=P.map((p,k)=>{
+  const x=50+k*100,h=[70,95,80,60,110][k];
+  return `<g class="s" style="animation-delay:${k*.18}s"><path d="M${x} 150V${150-h}" stroke="#8fc45a" stroke-width="5" stroke-linecap="round"/><ellipse cx="${x-16}" cy="${150-h}" rx="18" ry="9" transform="rotate(-25 ${x-16} ${150-h})" fill="#b9d96c"/><ellipse cx="${x+16}" cy="${150-h-4}" rx="18" ry="9" transform="rotate(25 ${x+16} ${150-h-4})" fill="#8fc45a"/></g>`}).join('');
+setLang(L);
+</script>
+</body>
+</html>
